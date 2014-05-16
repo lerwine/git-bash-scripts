@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File ".\TransformXml.ps1" -Source "Input.xml" -Stylesheet "Transform.xslt" -Output "Output.xml"
