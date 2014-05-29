@@ -8,29 +8,33 @@ Installation
 ------------
 To use these scripts globally, you will need to copy these to a folder within Git Bash's PATH.
 For instance, you can do the following:
-```text
-$ # See what paths can contain our scripts
-$ echo $PATH
-/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOW
-S/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files (x8
-6)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/Ac
-tivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files (x
-86)/QuickTime/QTSystem/
 
-$ # Preferred location is ~/bin. Make sure that it translates to a location in
-$ # our PATH variable
-$ echo ~/bin
+```bash
+# See what paths can contain our scripts
+echo $PATH
+```
+Example response:  
+/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files
+(x86)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/ActivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files
+(x86)/QuickTime/QTSystem/
+```bash
+# Preferred location is ~/bin. Make sure that it translates to a location in our PATH variable
+echo ~/bin
+```
+Example response:  
 /h/bin
-
-$ # See if this folder exists
-$ ls ~/bin
+```bash
+# See if this folder exists
+ls ~/bin
+```
+Example response:  
 ls: /h/bin: No such file or directory
+```bash
+# Create the folder if it does not exist
+mkdir ~/bin
 
-$ # Create the folder if it does not exist
-$ mkdir ~/bin
-
-$ # Copy scripts to bin folder
-$ cp /C/path/to/repo/git-scripts/* ~/bin
+# Copy scripts to bin folder
+cp /C/path/to/repo/git-scripts/* ~/bin
 ```
 
 Contributing
