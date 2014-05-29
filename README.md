@@ -40,11 +40,7 @@ $ cp /C/path/to/repo/git-scripts/* ~/bin
 
 Contributing
 ------------
-This Git script library is maintained by Leonard T. Erwine. The origin repository is located at:
-
-*[My Public GitHub Website](https://github.com/lerwine/git-bash-scripts.git).
-
-If you wish to contribute, please send an email to [lenny@erwinefamily.net](mailto:lenny@erwinefamily.net).
+This Git script library is maintained by Leonard T. Erwine. If you wish to contribute to this project, please contact me through [My Public GitHub Website](https://github.com/lerwine/git-bash-scripts.git).
 
 Windows Development Notes
 -------------------------
