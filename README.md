@@ -9,45 +9,44 @@ Installation
 To use these scripts globally, you will need to copy these to a folder within Git Bash's PATH.
 For instance, you can do the following:
 
-```bash
+>```
 # See what paths can contain our scripts
-echo $PATH
-```
-Example response:  
-/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files
-(x86)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/ActivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files
-(x86)/QuickTime/QTSystem/
-```bash
-# Preferred location is ~/bin. Make sure that it translates to a location in our PATH variable
-echo ~/bin
-```
-Example response:  
-/h/bin
-```bash
-# See if this folder exists
-ls ~/bin
-```
-Example response:  
-ls: /h/bin: No such file or directory
-```bash
-# Create the folder if it does not exist
-mkdir ~/bin
+$ echo $PATH
+/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOW
+S/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files (x8
+6)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/Ac
+tivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files (x
+86)/QuickTime/QTSystem/
 
-# Copy scripts to bin folder
-cp /C/path/to/repo/git-scripts/* ~/bin
+$ # Preferred location is ~/bin. Make sure that it translates to a location in
+$ # our PATH variable
+$ echo ~/bin
+/h/bin
+
+$ # See if this folder exists
+$ ls ~/bin
+ls: /h/bin: No such file or directory
+
+$ # Create the folder if it does not exist
+$ mkdir ~/bin
+
+$ # Copy scripts to bin folder
+$ cp /C/path/to/repo/git-scripts/* ~/bin
 ```
 
 Contributing
 ------------
 This Git script library is maintained by Leonard T. Erwine. The origin repository is located at:
-*[Public GitHub Website](https://github.com/lerwine/git-bash-scripts.git).
+
+*[My Public GitHub Website](https://github.com/lerwine/git-bash-scripts.git).
+
 If you wish to contribute, please send an email to [lenny@erwinefamily.net](mailto:lenny@erwinefamily.net).
 
 Windows Development Notes
 -------------------------
 Using Git bash is very similar to working within a linux environment. This includes the fact that git bash expects script files to use unix line endings.
 Also, you will need to convert windows paths to linux-style paths:
-* Use forward slash (\) characters in place of the back-slash (\)
+* Use forward slash \(\\) characters in place of the back-slash \(\\\)
 * When referencing a drive: Use a forward slash, followed by the drive letter, omitting the colon. For instance, "C:\Users" should be referenced as "/C/Users".
 * When referencing a network UNC, use 2 forward-slashes at the beginning, rather than 2 back-slashes. For instance, "\\MyMachine\MyShare\MyFolder" should be referenced as "//MyMachine/MyShare/MyFolder".
 
