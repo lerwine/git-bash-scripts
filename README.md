@@ -8,30 +8,30 @@ Installation
 ------------
 To use these scripts globally, you will need to copy these to a folder within Git Bash's PATH.
 For instance, you can do the following:
-<blockquote>
-$ # See what paths can contain our scripts<br />
-$ echo $PATH<br />
-/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOW<br />
-S/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files (x8<br />
-6)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/Ac<br />
-tivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files (x<br />
-86)/QuickTime/QTSystem/<br />
-<br />
-$ # Preferred location is ~/bin. Make sure that it translates to a location in<br />
-$ # our PATH variable<br />
-$ echo ~/bin<br />
-/h/bin<br />
-<br />
-$ # See if this folder exists<br />
-$ ls ~/bin<br />
-ls: /h/bin: No such file or directory<br />
-<br />
-$ # Create the folder if it does not exist<br />
-$ mkdir ~/bin<br />
-<br />
-$ # Copy scripts to bin folder<br />
+```text
+$ # See what paths can contain our scripts
+$ echo $PATH
+/h/bin:.:/usr/local/bin:/mingw/bin:/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOW
+S/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files (x8
+6)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/Ac
+tivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files (x
+86)/QuickTime/QTSystem/
+
+$ # Preferred location is ~/bin. Make sure that it translates to a location in
+$ # our PATH variable
+$ echo ~/bin
+/h/bin
+
+$ # See if this folder exists
+$ ls ~/bin
+ls: /h/bin: No such file or directory
+
+$ # Create the folder if it does not exist
+$ mkdir ~/bin
+
+$ # Copy scripts to bin folder
 $ cp /C/path/to/repo/git-scripts/* ~/bin
-</blockquote>
+```
 
 Contributing
 ------------
