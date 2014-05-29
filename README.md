@@ -6,7 +6,13 @@ actual bash shell on a linux machine.
 
 Installation
 ------------
-To use these scripts globally, you will need to copy these to a folder within Git Bash's PATH.
+For most cases, you can use "Install.bat" for windows machines or "install.sh" for linux machines.
+
+Manual Installation
+-------------------
+In the event that the install files do not work for you, you will need to copy these to a folder which is referenced by your PATH environment variable.
+For Windows machines, you will need to check the PATH variable from within the Git bash shell.
+
 For instance, you can do the following:
 
 >```
