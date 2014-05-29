@@ -17,19 +17,23 @@ S/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/c/Program Files (x8
 6)/Microsoft Application Virtualization Client:/c/Program Files/ActivIdentity/Ac
 tivClient/:/c/Program Files (x86)/ActivIdentity/ActivClient/:/c/Program Files (x
 86)/QuickTime/QTSystem/
-
+```
+>```
 $ # Preferred location is ~/bin. Make sure that it translates to a location in
 $ # our PATH variable
 $ echo ~/bin
 /h/bin
-
+```
+>```
 $ # See if this folder exists
 $ ls ~/bin
 ls: /h/bin: No such file or directory
-
+```
+>```
 $ # Create the folder if it does not exist
 $ mkdir ~/bin
-
+```
+>```
 $ # Copy scripts to bin folder
 $ cp /C/path/to/repo/git-scripts/* ~/bin
 ```
