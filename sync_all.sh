@@ -15,10 +15,8 @@ lineCount=$(echo "$remotes" | wc -l);
 
 while ((i<=lineCount)); do
 	r=$(echo "$remotes" | cut -f $i -d $'\n')
-	#git fetch $r HEAD
+	git fetch $r
+	git push -u $r master
     let i++;
 done
 
-ReadNzLineOrExit userName 'Enter user name:'
-echo $?
-echo $userName
