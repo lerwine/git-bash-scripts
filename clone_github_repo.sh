@@ -2,9 +2,10 @@
 
 source ./common.inc
 
-userName=""
+userName="$defaultUserName"
 repoName=""
 branchName=""
+url=""
 noPrompt=0;
 showHelp=0;
 
@@ -91,12 +92,15 @@ if [[ ! -a "$dirName" ]]; then
 	exit 5;
 fi
 
+GetRemoteUrl $repoName url $userName
+[ $? -eq false ] && exit 5
+
 if [ -z $branchName ]; then
-	echo "git clone -n \"https://github.com/$userName/$repoName.git\" \"$dirName\""
-	git clone "https://github.com/$userName/$repoName.git" "$dirName"
+	echo "git clone -n --recursive \"$url\" \"$dirName\""
+	git clone "$url" "$dirName"
 else
-	echo "git clone -n -b \"$branchName\" \"https://github.com/$userName/$repoName.git\" \"$dirName\""
-	git clone -b "$branchName" "https://github.com/$userName/$repoName.git" "$dirName"
+	echo "git clone -n -b --recursive \"$branchName\" \"$url\" \"$dirName\""
+	git clone -b "$branchName" "$url" "$dirName"
 fi
 
 exit 0;
