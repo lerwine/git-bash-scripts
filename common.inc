@@ -2,6 +2,60 @@
 
 shopt -s extglob nocaseglob nocasematch
 
+# Default remote username if one is not provided.
+export defaultUserName=""
+
+# Remote GIT server host name
+export remoteHostName="github.com"
+
+# Protocol to use for remote URL
+export protocol="https"
+
+# true to put user name at root of remote path, otherwise, user name is prepended to the host name.
+export userNameAtPathRoot=true
+
+export REPOSITORY_NAME_NOT_PROVIDED=100
+export NO_DEFAULT_USERNAME=101
+
+# Builds remote URL according to settings above
+# $1 is the remote repository name (without the .git extension)
+# $2 is variable name to receive the result
+#    If this argument is empty or not provided, then the url will be echoed.
+# $3 is the optional remote user name.
+#    If this argument is empty or not provided, then defaultUserName is used to determine the remot user name.
+# if $2 is defined and not empty, Returns true if the url was successfully created or false upon failure. Otherwise, the url is returned.
+# if $2 is defined and not empty, any errors will be echoed, otherwise, an exception will be thrown.
+function GetRemoteUrl () {
+	local userName
+	local url;
+	
+	if [ -z "$1" ]; then
+		[ -z "$2" ] && throw REPOSITORY_NAME_NOT_PROVIDED "Remote repository name not provided"
+		echo "Remote repository name not provided"
+		return ""
+	fi
+	userName="$3"
+	if [ -z "$userName" ]; then
+		if [ -z "$defaultUserName" ]; then
+			[ -z "$2" ] && throw NO_DEFAULT_USERNAME "User name not provided and default user name not defined"
+			echo "User name not provided and default user name not defined"
+			return ""
+		fi
+		userName="$defaultUserName"
+	fi
+
+	if [ $userNameAtPathRoot -eq true ]; then
+		url="$protocol://$remoteHostName/$userName/$1.git"
+	else
+		url="$protocol://$userName@$remoteHostName/$1.git"
+	fi
+	if [ -z "$2" ]; then
+		echo $url;
+	else
+		eval $2=\$url;
+	fi
+}
+
 # Gets Prompts user to answer yes or no to a prompt
 # $1 is the optional custom prompt
 #    This will automatically append an appropriate variation " [y/n]" to the prompt
